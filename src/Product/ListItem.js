@@ -1,11 +1,11 @@
 import ItemCard from "./ItemCard";
-import Row from "react-bootstrap/Row";
+
 
 const productsArr = [
   {
     title: "Colors",
 
-    price: '$100',
+    price: 100,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
   },
@@ -13,7 +13,7 @@ const productsArr = [
   {
     title: "Black and white Colors",
 
-    price: '$50',
+    price: 50,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
   },
@@ -21,7 +21,7 @@ const productsArr = [
   {
     title: "Yellow and Black Colors",
 
-    price: '$70',
+    price:70,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
   },
@@ -29,7 +29,7 @@ const productsArr = [
   {
     title: "Blue Color",
 
-    price: '$100',
+    price: 100,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
   },
@@ -37,15 +37,17 @@ const productsArr = [
 
 const ListItem = () => {
   return (
-    <>
-      
-      <Row xs={1} md={2} className="g-4 mx-5 my-5 align-items-center ms-5">
-        {productsArr.map((i) => (
-          <ItemCard title={i.title} price={i.price} img={i.imageUrl} />
-        ))}
-      </Row>
-      
-    </>
+    <div className="container my-3">
+              <h1 className='text-center mb-5'>My Products</h1> 
+              <div className="row" > 
+            
+              {productsArr.map((item)=>{
+                  return <div className="col-md-4 my-3 " key={item.img}>
+                     <ItemCard key={item.title} title={item.title} img={item.imageUrl} price={item.price} />
+                  </div> 
+              })} 
+              </div> 
+              </div> 
   );
 };
 export default ListItem;

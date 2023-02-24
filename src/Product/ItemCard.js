@@ -1,29 +1,18 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 
-
-const ItemCard=(props)=>{
-    return(
-        
-        <Col>
-        <Card style={{ width: '20rem' }} className=" ms-5">
-        <Card.Title className="text-center">{props.title}</Card.Title>
-        <Card.Img variant="top" src={props.img} />
-        <Card.Body>
-          <ul><Card.Text >
-            {props.price}
-            <Button variant="info" className='ms-5'>ADD TO CART</Button>
-            </Card.Text></ul>
-            
-          
-          
-          
-        </Card.Body>
-      </Card>
-      </Col>
-      
-    )
-}
-export default ItemCard
+const ItemCard = (props) => {
+  return (
+    <Card className='text-center' style={{ width: '18rem' }}>
+    <Card.Title className='text-center'>{props.title}</Card.Title>
+  <Card.Img variant="top" src={props.img} />
+  <Card.Body>
+    <h4>Price : {props.price}Rs</h4>
+    
+    <Button className='text-center' variant="secondary">Add To Cart</Button>
+  </Card.Body>
+</Card>
+  );
+};
+export default ItemCard;

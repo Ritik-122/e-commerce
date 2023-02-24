@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container,Nav,Navbar} from 'react-bootstrap'
-import Cart from './Header/Cart'
+import Cart from './Cart'
 
 export default function Navbarr() {
   return (

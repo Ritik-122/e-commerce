@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbarr from './Navbarr'
+import Navbarr from './Header/Navbarr.js'
 import ListItem from './Product/ListItem'
 
 
