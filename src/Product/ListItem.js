@@ -3,6 +3,7 @@ import ItemCard from "./ItemCard";
 
 const productsArr = [
   {
+    id:"m1",
     title: "Colors",
 
     price: 100,
@@ -11,6 +12,7 @@ const productsArr = [
   },
 
   {
+    id:"m2",
     title: "Black and white Colors",
 
     price: 50,
@@ -19,6 +21,7 @@ const productsArr = [
   },
 
   {
+    id:"m3",
     title: "Yellow and Black Colors",
 
     price:70,
@@ -27,6 +30,7 @@ const productsArr = [
   },
 
   {
+    id:"m4",
     title: "Blue Color",
 
     price: 100,
@@ -38,12 +42,12 @@ const productsArr = [
 const ListItem = () => {
   return (
     <div className="container my-3">
-              <h1 className='text-center mb-5'>My Products</h1> 
+              <h1 className='text-center mb-5'>The Generic</h1> 
               <div className="row" > 
             
               {productsArr.map((item)=>{
                   return <div className="col-md-4 my-3 " key={item.img}>
-                     <ItemCard key={item.title} title={item.title} img={item.imageUrl} price={item.price} />
+                     <ItemCard key={item.id} id={item.id}  title={item.title} img={item.imageUrl} price={item.price} />
                   </div> 
               })} 
               </div> 

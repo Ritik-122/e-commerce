@@ -1,62 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
 import Table from "react-bootstrap/Table";
-
-const cartElements = [
-  {
-    title: "Colors",
-
-    price: 100,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-
-    quantity: 2,
-  },
-
-  {
-    title: "Black and white Colors",
-
-    price: 50,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-    quantity: 3,
-  },
-
-  {
-    title: "Yellow and Black Colors",
-
-    price: 70,
-
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-
-    quantity: 1,
-  },
-];
+import CartContext from "../store/cart-context";
 
 const Cart = () => {
+  const CartCtx=useContext(CartContext)
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const showCartItems = cartElements.map((i) => (
+  const showCartItems = CartCtx.items.map((i) => (
     <CartItem
+    
       title={i.title}
       quantity={i.quantity}
-      img={i.imageUrl}
+      img={i.img}
       price={i.price}
     />
   ));
+  let totalCount = 0;
+  
+  CartCtx.items.forEach((item) => {
+    totalCount =totalCount+ (item.quantity);
+    
+  });
+  
   return (
     <>
       <Button variant="info" onClick={handleShow}>
-        Cart
+        Cart <sup>{totalCount}</sup>
       </Button>
-
-      <Offcanvas show={show} onHide={handleClose}>
+      
+      <Offcanvas show={show} onHide={handleClose} end>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Cart Items</Offcanvas.Title>
         </Offcanvas.Header>

@@ -1,17 +1,14 @@
-import React from 'react'
-import Navbarr from './Header/Navbarr.js'
-import ListItem from './Product/ListItem'
+import React from "react";
+import Navbarr from "./Header/Navbarr.js";
+import ListItem from "./Product/ListItem";
+import CartProvider from "./store/CartProvider.js";
 
-
-
-
-const App=()=>{
-    return(
-        <>
+const App = () => {
+  return (
+    <CartProvider>
       <Navbarr />
       <ListItem />
-     
-       </>
-    )
-}
-export default App
+    </CartProvider>
+  );
+};
+export default App;
