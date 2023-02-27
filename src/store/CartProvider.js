@@ -6,6 +6,7 @@ import CartContext from './cart-context'
 const CartProvider=(props)=>{
 
     const[items,updateItems]=useState([])
+
     const addItem=(item)=>{
         let temp=[...items]
         let indxOfItem=temp.findIndex((i)=>i.id===item.id)
@@ -24,7 +25,18 @@ const CartProvider=(props)=>{
         
 
     }
-    const removeItemFromCartHandler=()=>{
+    const removeItemFromCartHandler=(id)=>{
+        let temp=[...items]
+        let indxOfItem=temp.findIndex((i)=>i.id===id)
+        if(temp[indxOfItem].quantity>1){
+
+            temp[indxOfItem].quantity = Number(temp[indxOfItem].quantity) - 1;
+            }
+            else{
+              temp=temp.filter((i) => i.id !== id);
+              
+            }
+            updateItems([...temp]);
 
     }
 

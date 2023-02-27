@@ -1,11 +1,14 @@
 import React from 'react'
+import CartProvider from '../store/CartProvider'
+import ListItem from '../Product/ListItem'
 import {Container,Nav,Navbar} from 'react-bootstrap'
-import Cart from './Cart'
 import { NavLink } from 'react-router-dom'
 
-export default function Navbarr() {
+
+export default function Home() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <>
+   <Navbar bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="#home">The Generics</Navbar.Brand>
       <Nav className="me-auto">
@@ -13,8 +16,12 @@ export default function Navbarr() {
         <NavLink ><Nav.Link href="#store">STORE</Nav.Link></NavLink>
         <NavLink to='/about'><Nav.Link href="#about">ABOUT</Nav.Link></NavLink>
       </Nav>
-      <Cart />
+     
     </Container>
   </Navbar>
+    <CartProvider>
+        <ListItem />
+    </CartProvider>
+    </>
   )
 }

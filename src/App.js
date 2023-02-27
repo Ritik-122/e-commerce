@@ -1,14 +1,19 @@
 import React from "react";
-import Navbarr from "./Header/Navbarr.js";
-import ListItem from "./Product/ListItem";
-import CartProvider from "./store/CartProvider.js";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from './About/About'
+
+import Home from "./Home/Home.js";
+const route=createBrowserRouter([
+    {path:'/',element:<Home/>},{path:'/about',element:<About/>}
+
+])
 
 const App = () => {
   return (
-    <CartProvider>
-      <Navbarr />
-      <ListItem />
-    </CartProvider>
+    
+    <RouterProvider router={route} />
+    
   );
 };
 export default App;
