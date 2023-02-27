@@ -1,9 +1,11 @@
 import React from 'react'
+import NavbarTwo from '../Header/Navbar_two'
 
 export default function About() {
   return (
     <>
-        <h2>Hello</h2>
+    <NavbarTwo/>
+        <h2>Hello ABout</h2>
     </>
   )
 }
