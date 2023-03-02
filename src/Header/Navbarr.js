@@ -2,6 +2,7 @@ import React from 'react'
 import {Container,Nav,Navbar} from 'react-bootstrap'
 import Cart from './Cart'
 import { Link } from 'react-router-dom'
+import Button from "react-bootstrap/Button";
 
 export default function Navbarr() {
   return (
@@ -9,9 +10,10 @@ export default function Navbarr() {
     <Container>
       <Navbar.Brand href="#home">The Generics</Navbar.Brand>
       <Nav className="me-auto">
-        <Link to='/home'><Nav.Link href="#home">HOME</Nav.Link></Link>
-        <Link to='/'><Nav.Link href="#store">STORE</Nav.Link></Link>
-        <Link to='/about'><Nav.Link href="#about">ABOUT</Nav.Link></Link>
+        <Link to='/home'><Button variant="outline-light" size="sm" className="mx-2">HOME</Button></Link>
+        <Link to='/'><Button variant="outline-light" size="sm" className="mx-2">STORE</Button></Link>
+        <Link to='/about'><Button variant="outline-light" size="sm" className="mx-2">ABOUT</Button></Link>
+        <Link to='/contact'><Button variant="outline-light" size="sm" className="mx-2">Contact Us</Button></Link>
       </Nav>
       <Cart />
     </Container>
