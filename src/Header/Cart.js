@@ -14,7 +14,7 @@ const Cart = () => {
 
   const showCartItems = CartCtx.items.map((i) => (
     <CartItem
-
+     key={i.id}
       id={i.id}
       title={i.title}
       quantity={i.quantity}

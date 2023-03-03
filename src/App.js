@@ -1,27 +1,38 @@
 import React from "react";
 
-import { Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import About from "./About/About";
 import ContactForm from "./Contact/ContactForm";
 import Home from "./Home/Home";
 import Store from "./MainStorePAge/Store";
+import ProductDetails from "./Product/ProductDetails";
+
 
 const App = () => {
   return (
     <>
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      
-      <Route path="/store">
-        <Store />
-      </Route>
-      <Route path="/contact">
-        <ContactForm/>
-      </Route>
+    
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+
+        <Route path="/store">
+          <Store />
+        </Route>
+        <Route path="/" exact>
+          <Redirect to='/store'/>
+        </Route>
+        <Route path="/contact">
+          <ContactForm />
+        </Route>
+        <Route path="/product/:id">
+          <ProductDetails />
+        </Route>
+      </Switch>
     </>
   );
 };
