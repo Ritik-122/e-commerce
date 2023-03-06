@@ -53,6 +53,10 @@ export default function ProductDetails() {
     return item.id === params.id;
   }
   const clickedProducts = productsArr.filter(check);
+  if(clickedProducts.length==0)
+  {
+    return <p>No item found</p>
+  }
   console.log(clickedProducts);
 
   return (
@@ -73,11 +77,11 @@ export default function ProductDetails() {
             </div>
           );
         })}
-        <Carousel style={{ width: "500px", height: "800px"}}>
+        {/* <Carousel style={{ width: "500px", height: "800px"}}>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://www.teejunction.com.au/ssc/i/blank_product_category_listing_image_quality/3399592/1000/750/FFFFFF/1/1/0/category.jpg"
+              src="https://assets.ajio.com/medias/sys_master/root/20211203/0uT6/61aa2f30f997ddf8f1330f28/-473Wx593H-461592493-multi-MODEL.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -100,7 +104,8 @@ export default function ProductDetails() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://assets.ajio.com/medias/sys_master/root/20211203/0uT6/61aa2f30f997ddf8f1330f28/-473Wx593H-461592493-multi-MODEL.jpg"
+              
+              src="https://www.teejunction.com.au/ssc/i/blank_product_category_listing_image_quality/3399592/1000/750/FFFFFF/1/1/0/category.jpg"
               alt="Third slide"
             />
 
@@ -111,7 +116,7 @@ export default function ProductDetails() {
               </p>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel>
+        </Carousel> */}
       </div>
      
     </>
