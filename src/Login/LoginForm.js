@@ -2,6 +2,7 @@ import React, { useContext, useRef} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
+import NavbarTwo from "../Header/Navbar_two";
 import classes from "../Login/LoginForm.module.css";
 import CartContext from "../store/cart-context";
 export default function LoginForm() {
@@ -52,7 +53,9 @@ const AuthContext=useContext(CartContext)
   };
   return (
     <>
-    
+    <NavbarTwo/>
+   
+    <h2 >Login to see the Product page</h2>
       <div className={classes.container}>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -82,6 +85,7 @@ const AuthContext=useContext(CartContext)
           </Button>
         </Form>
       </div>
+      
     </>
   );
 }
