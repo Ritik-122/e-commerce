@@ -7,11 +7,37 @@ import CartContext from '../store/cart-context'
 
 const ItemCard = (props) => {
   const  CartCtx=useContext(CartContext)
-  
+  let EmailId=localStorage.getItem('userEmailId')
+  let userEmailId=EmailId.replace('@','')
+  let newUserEmailId=userEmailId.replace('.','')
 
   const addToCartHandler=()=>{
   
     CartCtx.addItem({...props,quantity:1})
+    fetch(`https://crudcrud.com/api/5d3b981e056f422698cbbfb0948f3972/cart${newUserEmailId}`,{
+      method:"POST",
+      body:JSON.stringify({
+        id:props.id,
+      title:props.title,
+      price:props.price,
+      img:props.img,
+      quantity:1
+      }),
+      headers:{
+        'Content-Type':"application/json"
+      }
+    }).then((res)=>{
+      if(res.ok){
+         return res.json().then((data)=>{
+          console.log(data)
+         })
+      }else{
+        return res.json().then((data)=>{
+          console.log(data)
+        })
+      }
+    })
+
 
 }
 const link=`product/${props.id}`

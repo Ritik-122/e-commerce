@@ -32,6 +32,8 @@ const AuthContext=useContext(CartContext)
           console.log(data.idToken);
           AuthContext.addUser(data.idToken)
           localStorage.setItem("Token", data.idToken);
+          localStorage.setItem('userEmailId',data.email)
+          console.log(data.email)
           history.replace('/store')
           
         });

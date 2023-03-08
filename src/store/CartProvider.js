@@ -34,8 +34,10 @@ const removeUser=()=>{
     }
     updateItems([...temp]);
   };
+  
 
   const cartContext = {
+    
     token: token,
     isLoggedIn: userLogIn,
     items: items,
@@ -43,6 +45,7 @@ const removeUser=()=>{
     removeItem: removeItemFromCartHandler,
     addUser: addUser,
     removeUser: removeUser,
+  
   };
 
   return (
